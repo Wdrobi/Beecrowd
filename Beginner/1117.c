@@ -2,35 +2,25 @@
 
 int main()
 {
-    float n,avr;
-    int sum,count,pc;
-    while(1)
+    float x, sum = 0.0;
+    int count = 0;
+    while (1)
     {
-        scanf("%f",&n);
-
-        if(n<10)
-        {
-            printf("nota invalida\n");
-        }
-        if(n>=10)
-        {
-            pc++;
-        }
-
-        else
-        {
-            if(n>=0 && n<=10)
-            {
-                count++;
-            }
-            sum += n;
-        }
-        if(pc==2)
+        if (count == 2)
         {
             break;
         }
+        scanf("%f", &x);
+        if (x >= 0 && x <= 10)
+        {
+            count++;
+            sum += x;
+        }
+        else
+        {
+            printf("nota invalida\n");
+        }
     }
-    avr = sum/count;
-    printf("media = %.2f\n",sum);
+    printf("media = %.2f\n", sum / 2);
     return 0;
 }

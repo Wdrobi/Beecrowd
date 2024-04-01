@@ -3,22 +3,36 @@
 int main()
 {
     int L;
-    char T;
-    float M[12][12],sum=0,aver;
-    scanf("%d",&L);
-    for (int i=0;i<12;i++){
-        for(int j=0;j<12;j++){
-            scanf("%f",&M[i][j]);
-            sum+=M[L][j];
+    scanf("%d", &L);
+    char T[2];
+    scanf("%s", T);
+    float m[12][12];
+    for (int i = 0; i < 12; i++)
+    {
+        for (int j = 0; j < 12; j++)
+        {
+            scanf("%f", &m[i][j]);
         }
     }
-    aver = sum/12;
-    scanf("%c",&T);
-    switch(T){
-    case S:
-        printf("%.1f",sum);
-    case M:
-        printf("%.1f",aver);
+    if (T[0] == 'S')
+    {
+        float sum = 0;
+        for (int k = 0; k < 12; k++)
+        {
+            sum += m[L][k];
+        }
+        printf("%.1f\n", sum);
+    }
+    if (T[0] == 'M')
+    {
+        float avr = 0;
+        float sum = 0;
+        for (int k = 0; k < 12; k++)
+        {
+            sum += m[L][k];
+        }
+        avr = sum / 12;
+        printf("%.1f\n", avr);
     }
     return 0;
 }
